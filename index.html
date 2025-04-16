@@ -2,12 +2,93 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Redirection vers l'API Zetsu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt vers API Zetsu</title>
+  <style>
+    /* Reset & base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0e0e10;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .container {
+      background: #1a1a1d;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 2px solid #333;
+      background: #0e0e10;
+      color: white;
+      font-size: 1rem;
+      transition: border 0.3s ease;
+      margin-bottom: 1.5rem;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #805ad5;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #805ad5, #d53f8c);
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(128, 90, 213, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h2>Entrer un prompt</h2>
-  <input type="text" id="prompt" placeholder="Ex: un chat">
-  <button onclick="redirect()">Envoyer</button>
+  <div class="container">
+    <h2>Générer via API Zetsu</h2>
+    <input type="text" id="prompt" placeholder="Ex: un chat cyberpunk dans un monde futuriste">
+    <button onclick="redirect()">Envoyer</button>
+  </div>
 
   <script>
     function redirect() {
