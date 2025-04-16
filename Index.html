@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirection vers l'API Zetsu</title>
+</head>
+<body>
+  <h2>Entrer un prompt</h2>
+  <input type="text" id="prompt" placeholder="Ex: un chat">
+  <button onclick="redirect()">Envoyer</button>
+
+  <script>
+    function redirect() {
+      const prompt = document.getElementById('prompt').value.trim();
+      if (!prompt) {
+        alert("Veuillez entrer un prompt.");
+        return;
+      }
+      const url = `https://api.zetsu.xyz/api/qwen?prompt=${encodeURIComponent(prompt)}`;
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
